@@ -38,7 +38,7 @@ sudo cp /root/redis-4.0.11/redis.conf /usr/local/redis/conf
 sed -i "68,70s/bind 127.0.0.1/bind 0.0.0.0/g" /usr/local/redis/conf/redis.conf
 sed -i "87,89s/protected-mode yes/protected-mode no/g" /usr/local/redis/conf/redis.conf
 sed -i "135,137s/daemonize no/daemonize yes/g" /usr/local/redis/conf/redis.conf
-sed -i '171c\logfile "\/usr\/local\/redis\/log\/redis.log"' /usr/local/redis/redis.conf
+sed -i '171c\logfile "\/usr\/local\/redis\/log\/redis.log"' /usr/local/redis/conf/redis.conf
 }
 function check_firewall(){
 	if [ -e "/etc/sysconfig/iptables" ]
