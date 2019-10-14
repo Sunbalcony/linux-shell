@@ -17,14 +17,14 @@ while [ -z "${ZBXS}" ]
 do
     read -p "请输入ZBX Server地址：" ZBXS
 done
-sed -i "97c\Server=${ZBXS}"
-sed -i "138c\Server=${ZBXS}"
+sed -i "97c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
+sed -i "138c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
 read -p "请输入Agent Hostname：" ZBXC
 while [ -z "${ZBXC}"]
 do
     read -p "请输入Agent Hostname：" ZBXC
 done
-sed -i "149c\Hostname=${ZBXC}"
+sed -i "149c\Hostname=${ZBXC}" /etc/zabbix/zabbix_agentd.conf
 systemctl start zabbix-agent
 }
 check_process(){
