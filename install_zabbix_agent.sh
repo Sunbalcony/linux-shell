@@ -20,7 +20,7 @@ done
 sed -i "97c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
 sed -i "138c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
 read -p "请输入Agent Hostname：" ZBXC
-while [ -z "${ZBXC}"]
+while [ -z "${ZBXC}" ]
 do
     read -p "请输入Agent Hostname：" ZBXC
 done
