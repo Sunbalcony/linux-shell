@@ -44,7 +44,10 @@ case $emmm in
             check_env
             check_env && \
             install_agent && \
-            check_process && \
+            check_process
+	;;
         2)
             systemctl restart zabbix-agent
+	;;
+	*)  echo -e "输入错误"
 esac
