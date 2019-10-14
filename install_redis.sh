@@ -38,7 +38,7 @@ sudo cp /root/redis-4.0.11/redis.conf /usr/local/redis/conf
 sed -i "68,70s/bind 127.0.0.1/bind 0.0.0.0/g" /usr/local/redis/conf/redis.conf
 sed -i "87,89s/protected-mode yes/protected-mode no/g" /usr/local/redis/conf/redis.conf
 sed -i "135,137s/daemonize no/daemonize yes/g" /usr/local/redis/conf/redis.conf
-#sed -i "170,172s/logfile \"/usr/local/redis/log/redis.log\"/111/g" /usr/local/redis/conf/redis.conf
+sed -i '171c\logfile "\/usr\/local\/redis\/log\/redis.log"' /usr/local/redis/redis.conf
 }
 function check_firewall(){
 	if [ -e "/etc/sysconfig/iptables" ]
@@ -93,7 +93,7 @@ function check_success(){
 	echo "Redis已启动成功，默认端口6379"
 	echo "安装目录在/usr/local/redis"
 	echo "配置文件在/usr/local/redis/conf"
-	echo "请自行修改conf文件中redis日志文件<logfile>路径"
+	echo "日志在/usr/local/redis/log/redis.log"
 	echo "##########################################"
 }
 echo "Centos7 Redis 4.0.11一键安装脚本(默认6379)"
