@@ -8,7 +8,7 @@ function check_env(){
 	if [ -e "/usr/bin/yum" ]
 	then
 		sudo yum -y install epel-release
-                sudo yum -y install wget pcre-devel openssl openssl-devel gcc gcc-c++ tcl make vim
+                sudo yum -y install wget pcre-devel openssl openssl-devel gcc gcc-c++ tcl make vim net-tools
                 yum -y install erlang
 	else
 		exit 1
