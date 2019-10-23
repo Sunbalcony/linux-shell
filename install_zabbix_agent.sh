@@ -30,7 +30,7 @@ function install_agent(){
 check_process(){
     echo "正在启动Zabbix-Agent"
     systemctl start zabbix-agent
-    sleep 5
+    sleep 8
     if [[ ${ZBXP} == 10050 ]]
     then
             echo -e "zabbix-agent启动成功"
