@@ -121,7 +121,7 @@ function info(){
 
 #选择安装方式
 echo "------------------------------------------------"
-echo "Linux + tengine2.1.2一键安装脚本(beta 1.0 by maxin)"
+echo "Linux + tengine2.1.2一键安装脚本(beta 1.0 by Sunbalcony)"
 echo "1) 安装tengine"
 echo "2) 清理安装包"
 echo "3) 退出"
