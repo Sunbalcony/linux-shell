@@ -132,9 +132,9 @@ case $num in
         check_system && \
     	install_cpan && \
     	install_openssl && \
-        add_firewall && \
     	install_tengine && \
-        info
+        info && \
+	add_firewall 
     ;;
     2) 
     	cleanup
