@@ -38,6 +38,24 @@ check_process(){
             echo -e "zabbix-agent启动失败，请检查"
     fi
 }
+function check_firewall(){
+	if [ -e "/etc/sysconfig/iptables" ]
+	then
+		iptables -I INPUT -p tcp --dport 10050 -j ACCEPT
+		service iptables save
+		service iptables restart
+		echo "##############################iptables配置完成##############################"
+	elif [ -e "/etc/firewalld/zones/public.xml" ]
+	then
+		firewall-cmd --zone=public --add-port=10050/tcp --permanent
+		firewall-cmd --reload
+		echo "##############################firewall配置完成##############################"
+	elif [ -e "/etc/ufw/before.rules" ]
+	then
+		sudo ufw allow 10050/tcp
+		echo "##############################ufw配置完成##############################"
+	fi
+}
 echo "Centos7 Zabbix-Agent 一键安装脚本 by Sunbalcony"
 echo "1) 安装Zabbix-Agent"
 echo "2) 重启Zabbix-Agent"
@@ -47,7 +65,8 @@ case $emmm in
             check_env
             check_env && \
             install_agent && \
-            check_process
+            check_process && \
+	    check_firewall
 	;;
         2)
             systemctl restart zabbix-agent
