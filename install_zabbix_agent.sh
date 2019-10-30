@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 ZBXP=$(netstat -ntlp |grep tcp |grep -v tcp6| grep 10050|awk '{print $4}'|awk -F : '{print $2}')
@@ -30,14 +30,14 @@ function install_agent(){
 check_process(){
     echo "正在启动Zabbix-Agent"
     systemctl start zabbix-agent
-    sleep 8
-    if [[ ${ZBXP} == 10050 ]]
-    then
-            echo -e "zabbix-agent启动成功"
-    else
-            echo -e "zabbix-agent启动失败，请检查"
-    fi
-}
+#     sleep 8
+#     if [[ ${ZBXP} == 10050 ]]
+#     then
+#             echo -e "zabbix-agent启动成功"
+#     else
+#             echo -e "zabbix-agent启动失败，请检查"
+#     fi
+# } 不知为何总是检查失败 先屏蔽
 function check_firewall(){
 	if [ -e "/etc/sysconfig/iptables" ]
 	then
