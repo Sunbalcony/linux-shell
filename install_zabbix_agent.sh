@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
-ZBXP=$(netstat -ntlp |grep tcp |grep -v tcp6| grep 10050|awk '{print $4}'|awk -F : '{print $2}')
 function check_root(){
 	[[ $EUID != 0 ]] && echo -e "当前账号非ROOT(或没有ROOT权限)，无法继续操作，请使用 sudo -i来获取临时ROOT权限（执行后会提示输入当前账号的密码）。" && exit 1
 }
@@ -31,6 +30,7 @@ check_process(){
     echo "正在启动Zabbix-Agent"
     systemctl start zabbix-agent
     sleep 8
+    ZBXP=$(netstat -ntlp |grep tcp |grep -v tcp6| grep 10050|awk '{print $4}'|awk -F : '{print $2}')
     if [[ ${ZBXP} == 10050 ]]
     then
             echo -e "zabbix-agent启动成功"
