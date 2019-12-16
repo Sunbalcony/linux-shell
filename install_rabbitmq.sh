@@ -50,7 +50,7 @@ function check_admin(){
         done
         rabbitmqctl add_user ${acc} ${accpwd}
         rabbitmqctl set_user_tags ${acc} administrator
-        rabbitmqctl set_permission -p / ${acc} ".*" ".*" ".*"
+        rabbitmqctl set_permissions -p / ${acc} ".*" ".*" ".*"
         echo "设置管理员账号${acc},密码${accpwd}完成"
         sleep 5
 }
