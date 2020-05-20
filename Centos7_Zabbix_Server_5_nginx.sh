@@ -1,7 +1,7 @@
 yum install epel-release -y
 yum install openssl* -y
 yum install mariadb-server -y
-yum install fping OpenIPMI unixODBC libtool-ltdl libevent python3 python3-devel gcc gcc-c++ mariadb mariadb-devel lrzsz -y
+yum install fping OpenIPMI unixODBC libtool-ltdl libevent gcc gcc-c++ mariadb mariadb-devel lrzsz -y
 systemctl start mariadb
 systemctl enable mariadb
 rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
