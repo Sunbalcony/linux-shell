@@ -17,8 +17,11 @@ function install_agent(){
     do
         read -p "请输入ZBX Server地址：" ZBXS
     done
-    sed -i "97c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
-    sed -i "138c\ServerActive=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
+    #sed -i "97c\Server=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
+    #sed -i "138c\ServerActive=${ZBXS}" /etc/zabbix/zabbix_agentd.conf
+    sed -i "s/Server=127.0.0.1/Server=${ZBXS}/g" /etc/zabbix/zabbix_agentd.conf
+    sed -i "s/ServerActive=127.0.0.1/ServerActive=${ZBXS}/g" /etc/zabbix/zabbix_agentd.conf
+    
     read -p "请输入Agent Hostname：" ZBXC
     while [ -z "${ZBXC}" ]
     do
