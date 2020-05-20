@@ -45,8 +45,8 @@ vim /etc/opt/rh/rh-nginx116/nginx/conf.d/zabbix.conf
 ```
 vim /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
 ```
-listen.acl_users = apache,nginx
-; php_value[date.timezone] = Europe/Riga(Asia/shanghai)
+listen.acl_users = nginx
+; php_value[date.timezone] = Europe/Riga(Asia/shanghai) #修改为自己的去掉注释
 ```
 
 systemctl restart zabbix-server zabbix-agent rh-nginx116-nginx rh-php72-php-fpm
