@@ -27,7 +27,8 @@ function install_agent(){
     do
         read -p "请输入Agent Hostname：" ZBXC
     done
-    sed -i "149c\Hostname=${ZBXC}" /etc/zabbix/zabbix_agentd.conf
+    #sed -i "149c\Hostname=${ZBXC}" /etc/zabbix/zabbix_agentd.conf
+    sed -i "s/Hostname=Zabbix Server/Hostname=${ZBXC}/g" /etc/zabbix/zabbix_agentd.conf
 }
 check_process(){
     echo "正在启动Zabbix-Agent"
