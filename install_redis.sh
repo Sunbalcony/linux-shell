@@ -25,7 +25,7 @@ sudo mkdir -p /usr/local/redis/log
 sudo chmod 755 /usr/local/redis
 sudo chmod 755 /usr/local/redis/log
 sudo chmod 755 /usr/local/redis/conf
-sudo wget https://cdn.valarx.com/mirrors/redis-4.0.11.tar.gz
+sudo http://mirrors.valarx.com/redis-4.0.11.tar.gz
 sudo tar -zxvf redis-4.0.11.tar.gz
 cd redis-4.0.11/
 sudo make MALLOC=libc
