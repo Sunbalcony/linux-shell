@@ -27,9 +27,9 @@ function check_port(){
 }
 ###cat /var/lib/rabbitmq/.erlang.cookie
 function install_rbq(){
-        rpm --import https://cdn.valarx.com/mirrors/rabbitmq-release-signing-key.asc
+        rpm --import http://mirrors.valarx.com/rabbitmq-release-signing-key.asc
         #yum -y install https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.10/rabbitmq-server-3.6.10-1.el7.noarch.rpm
-        yum -y install https://cdn.valarx.com/mirrors/rabbitmq-server-3.6.10-1.el7.noarch.rpm
+        yum -y install http://mirrors.valarx.com/rabbitmq-server-3.6.10-1.el7.noarch.rpm
         echo "启动Rabbitmq-server"
         systemctl enable rabbitmq-server
         systemctl start rabbitmq-server
