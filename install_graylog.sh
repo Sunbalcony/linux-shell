@@ -53,7 +53,7 @@ function install_ela(){
     # echo "autorefresh=1" >> elasticsearch.repo
     # echo "type=rpm-md" >> elasticsearch.repo
     # cd 
-    rpm -ivh https://arya.valarx.com/graylog/elasticsearch-oss-6.8.2.rpm
+    rpm -ivh http://mirrors.valarx.com/elasticsearch-oss-6.8.2.rpm
     # yum install elasticsearch-oss -y
     read -p "设置ela集群名称:" clustername
 	while [ -z "${clustername}" ]
@@ -69,8 +69,8 @@ function install_ela(){
 function install_graylog(){
     # rpm -ivh https://packages.graylog2.org/repo/packages/graylog-3.1-repository_latest.rpm
     # sudo yum install graylog-server -y
-    rpm -ivh https://arya.valarx.com/graylog/graylog-3.1-repository_latest.rpm
-    rpm -ivh https://arya.valarx.com/graylog/graylog-server-3.1.0-6.noarch.rpm
+    rpm -ivh http://mirrors.valarx.com/graylog-3.1-repository_latest.rpm
+    rpm -ivh http://mirrors.valarx.com/graylog-server-3.1.0-6.noarch.rpm
     secret=$(pwgen -N 1 -s 96)
     sed -i "54,67s/password_secret =/password_secret = ${secret}/g" /etc/graylog/server/server.conf
     read -p "设置graylog登陆密码：" pswd
