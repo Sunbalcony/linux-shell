@@ -40,7 +40,8 @@ function install_libevent(){
     echo "#############################安装libevent##########################################"
     cd /usr/local/
     mkdir libevent
-    wget --no-check-certificate https://arya.valarx.com/mirrors/libevent-2.0.22-stable.tar.gz
+    #wget --no-check-certificate https://arya.valarx.com/mirrors/libevent-2.0.22-stable.tar.gz
+    wget http://mirrors.valarx.com/libevent-2.0.22-stable.tar.gz
     tar -zxvf libevent-2.0.22-stable.tar.gz
     cd libevent-2.0.22-stable/
     ./configure -prefix=/usr/local/libevent
@@ -51,7 +52,7 @@ function install_memcache(){
     echo "#############################安装memcache##########################################"
     cd /usr/local/
     mkdir memcached
-    wget --no-check-certificate https://arya.valarx.com/mirrors/memcached-1.5.16.tar.gz
+    wget http://mirrors.valarx.com/memcached-1.5.16.tar.gz
     tar -zxvf memcached-1.5.16.tar.gz
     mv memcached-1.5.16/ memcache
     cd memcache
