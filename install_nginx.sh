@@ -47,7 +47,7 @@ function install_cpan(){
         ln -s /usr/local/perl/bin/perl /usr/bin/perl
     else
         echo "cpan不存在准备下载"
-        wget --no-check-certificate https://arya.valarx.com/mirrors/perl-5.24.1.tar.gz
+        wget http://mirrors.valarx.com/perl-5.24.1.tar.gz
         tar zxvf perl-5.24.1.tar.gz 
         cd perl-5.24.1
         ./Configure -des -Dprefix=/usr/local/perl
@@ -62,7 +62,7 @@ function install_cpan(){
 function install_openssl(){
     echo "-----------------------------安装openssl-------------------------------------"
     cd /usr/local/
-    wget --no-check-certificate https://arya.valarx.com/mirrors/openssl-1.0.1q.tar.gz
+    wget http://mirrors.valarx.com/openssl-1.0.1q.tar.gz
     tar zxvf openssl-1.0.1q.tar.gz
     cd openssl-1.0.1q
     ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' --prefix=/usr/local/ssl shared zlib-dynamic
@@ -76,7 +76,7 @@ function install_tengine(){
 #####安装tengine#####
     echo "-----------------------------安装tengine-----------------------------------------------------------------"
     cd /usr/local
-    wget --no-check-certificate https://arya.valarx.com/mirrors/tengine-2.1.2.tar.gz
+    wget http://mirrors.valarx.com/tengine-2.1.2.tar.gz
     tar zxvf tengine-2.1.2.tar.gz
     cd tengine-2.1.2
     ./configure --prefix=/usr/local/nginx --with-http_stub_status_module  --with-pcre --with-http_upstream_check_module --with-http_spdy_module --dso-path=/usr/local/nginx/dso/module/ --with-http_ssl_module --with-openssl=/usr/local/openssl-1.0.1q
