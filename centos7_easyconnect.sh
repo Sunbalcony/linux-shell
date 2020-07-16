@@ -7,10 +7,10 @@ vncserver :1
 开放5901端口
 
 
-wget https://arya.valarx.com/bag/opera-10.60-6386.x86_64.rpm
+wget http://mirrors.valarx.com/opera-10.60-6386.x86_64.rpm
 sudo rpm -ivh opera-10.60-6386.x86_64.rpm
 
-https://arya.valarx.com/bag/jre-6u27-linux-x64.bin
+http://mirrors.valarx.com/jre-6u27-linux-x64.bin
 chmod +x jre-6u27-linux-x64.bin
 sudo ./jre-6u27-linux-x64.bin
 
